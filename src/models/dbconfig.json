@@ -1,0 +1,12 @@
+{
+  "mysql" : {
+      "connectionLimit": 10,
+      "host": "192.168.137.83",
+      "port": "3308",
+      "user": "root",
+      "password": "1qazxsw2*-",
+      "database": "smartcode",
+      "insecureAuth" : true,
+      "_socket": "/var/run/mysqld/mysqld.sock"
+  }
+}
