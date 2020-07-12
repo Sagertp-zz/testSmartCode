@@ -47,7 +47,9 @@ Controller.deleteusuarios = (req, res) => {
 //--------- Tickets -----------------//
 
 Controller.getAlltickets = (req, res) => {
-  ticketsModel.getAll((err, rows) => {
+  console.log(req.user.id_usuario);
+  
+  ticketsModel.getAll( 48, 1, (err, rows) => {
     res.json(rows);
   });
 };

@@ -18,54 +18,27 @@ class Singup extends Component {
 
   addusuario(e) {
     //console.log(this.state);
-    if (this.state.id_usuario) {
-      fetch(`/usuario/${this.state.id_usuario}`, {
-        method: "PUT",
-        body: JSON.stringify(this.state),
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
+    fetch("/signup", {
+      method: "POST",
+      body: JSON.stringify(this.state),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => console.log('prueba'))
+      .then((data) => {
+        console.log('prueba2');
+        M.toast({ html: "Usuario Creado" });
+        this.setState({
+          id_usuario: 0,
+          id_tipo_usuario: "",
+          nombre: "",
+          email: "",
+          pass: "",
+        });
       })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          M.toast({ html: "Usuario Actualizado" });
-          this.setState({
-            id_usuario: "",
-            id_tipo_usuario: "",
-            nombre: "",
-            email: "",
-            pass: "",
-            _id: "",
-          });
-          this.fetchusuario();
-        })
-        .catch((err) => console.error(err));
-    } else {
-      fetch("/singup", {
-        method: "POST",
-        body: JSON.stringify(this.state),
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      })
-        .then((res) => console.log('prueba'))
-        .then((data) => {
-          console.log('prueba2');
-          M.toast({ html: "Usuario Creado" });
-          this.setState({
-            id_usuario: 0,
-            id_tipo_usuario: "",
-            nombre: "",
-            email: "",
-            pass: "",
-          });
-          this.fetchusuario();
-        })
-        .catch((err) => console.error(err));
-    }
+      .catch((err) => console.error(err));
     e.preventDefault();
   }
 

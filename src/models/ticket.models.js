@@ -3,7 +3,13 @@
 const conn = require("./dbconnection"),
   ticketsModel = () => {};
 
-ticketsModel.getAll = (cb) => conn.query("SELECT * FROM ticket", cb);
+ticketsModel.getAll = (id_usuario, id_tipo_usuario, cb) => {
+  if (id_tipo_usuario === 1) {
+    conn.query("SELECT * FROM ticket", cb)    
+  }else{
+    conn.query("SELECT * FROM ticket WHERE id_usuario = ?", id_usuario, cb)
+  }
+};
 ticketsModel.getOne = (id, cb) => conn.query("SELECT * FROM ticket WHERE id_ticket = ?", [id], cb);
 ticketsModel.save = (ticket, cb) => {
   conn.query(

@@ -8,7 +8,8 @@ const
   session = require('express-session'),
   MySQLStore = require('express-mysql-session')(session),
   conection =  require('./models/dbconfig.json'),
-  passport = require('passport');
+  passport = require('passport'),
+  flash = require('connect-flash');
 
 
 // Intializations
@@ -27,12 +28,21 @@ app.use(session({
 }))
 app.use(morgan("dev"));
 app.use(express.urlencoded({extended: false}))
-app.use(express.json()); 
+app.use(express.json());
+app.use(flash()) 
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Global variables
+app.use((req, res, next) => {
+  app.locals.message = req.flash('message');
+  app.locals.success = req.flash('success');
+  app.locals.user = req.user;
+  next();
+});
+
 //Routes
-app.use(require("./routes/users.routes"));
+app.use(require("./routes/routes"));
 app.use(require("./routes/auth"));
 
 //Statics files

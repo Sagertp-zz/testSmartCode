@@ -1,6 +1,7 @@
 const 
   mysql = require("mysql"),
   conf = require("./dbconfig.json"),
+  { promisify }= require('util'),
   dbOptions = {
     connectionLimit: conf.mysql.connectionLimit,
     host: conf.mysql.host,
@@ -32,10 +33,6 @@ const
     return;
   });
 
-/*
-myConn.connect((err) => {
-  return err
-    ? console.log(`Error al conectase a MySQL: ${err.stack}`)
-    : console.log(`Conexion establecida con MySQL N: ${myConn.threadId}`);
-});*/
+  myConn.query = promisify(myConn.query);
+
 module.exports = myConn;
