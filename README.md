@@ -229,7 +229,7 @@ Directorio:
 *En primer lugar:*  webpack, este script nos permitirá que las tecnologías webpack y babel, conviertan el código jsx de React a código js entendible por los navegadores.
 
 ```
-	npm webpack
+	npm run webpack
 ```
 
  
