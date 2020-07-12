@@ -26,7 +26,15 @@ CREATE TABLE ticket (
   FOREIGN KEY (id_usuario) REFERENCES usuarios (id_usuario)
 );
 
-INSERT INTO tipo_usuario (id_tipo_usuario, nombre) VALUES (1, "administrador"), (2, "usuario");
+INSERT INTO tipo_usuario (id_tipo_usuario, nombre) VALUES 
+(1, "administrador"),
+ (2, "usuario");
 INSERT INTO usuarios (id_usuario, id_tipo_usuario, email, nombre, pass) VALUES
-(1, 1, "sagertp@gmail.com", "saget perez", "1qazxsw2*-"),
-(2, 2, "sagertp@gmail.com", "Kenyuri Camino", "1qazxsw2*-");
+(1, 1, "administrador@smartcode.com", "Administrador", "1qazxsw2*-"),
+(2, 2, "usuario1@smartcode.com", "Usuario 1", "qwerty*-1"),
+(3, 2, "usuario2@smartcode.com", "Usuario 2", "qwerty*-2");
+INSERT INTO ticket (id_ticket, id_usuario, ticket_pedido) VALUES 
+(1, 2, ""), 
+(2, 2, ""),
+(3, 3, ""),
+(4, 3, "");
