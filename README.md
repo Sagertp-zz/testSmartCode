@@ -273,7 +273,6 @@ Para ingresar a la aplicación  se cuenta con 3 usuarios pre configurados en el 
 
 ​	(3, 2, "usuario2@smartcode.com", "Usuario 2", "qwerty*-2");
 
-​	
 
 ​	INSERT INTO ticket (id_ticket, id_usuario, ticket_pedido) VALUES 
 
@@ -286,5 +285,34 @@ Para ingresar a la aplicación  se cuenta con 3 usuarios pre configurados en el 
 ​	(4, 3, "");
 ```
 
-En la vista de login se debe utilizar las credenciales que muestra este cuadro.
+  	(A fines de que se entienda este documento las claves estan sin encriptar sin embargo en el script SQL estan encriptadas).
+
+En la vista de login se debe utilizar las credenciales que muestra este cuadro de la suguiente forma:
+
+
+
+Para el administrador.
+
+```
+Usuario: administrador@smartcode.com
+Password: 1qazxsw2*-
+```
+
+
+
+Para el usuario1
+
+```
+Usuario: usuario1@smartcode.com
+Password: qwerty*-1
+```
+
+
+
+Para el Usuario2
+
+```
+Usuario: usuario2@smartcode.com
+Password: qwerty*-2
+```
 

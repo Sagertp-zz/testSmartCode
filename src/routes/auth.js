@@ -36,11 +36,10 @@ const
   })
 
   router.get('/logout', (req, res) => {
-
     req.logOut();
-    console.log('Logout');
-    
+    res.json({status: "Logout Bay Bay"});
     res.redirect('/');
+    console.log('Logout');
   });
 
 module.exports = router;

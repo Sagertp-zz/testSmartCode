@@ -30,9 +30,9 @@ INSERT INTO tipo_usuario (id_tipo_usuario, nombre) VALUES
 (1, "administrador"),
  (2, "usuario");
 INSERT INTO usuarios (id_usuario, id_tipo_usuario, email, nombre, pass) VALUES
-(1, 1, "administrador@smartcode.com", "Administrador", "1qazxsw2*-"),
-(2, 2, "usuario1@smartcode.com", "Usuario 1", "qwerty*-1"),
-(3, 2, "usuario2@smartcode.com", "Usuario 2", "qwerty*-2");
+(1, 1, "administrador@smartcode.com", "Administrador", "$2a$10$vA0XQA3uFtQROU3cHJhHNu19G4G1IM8k1tx0GmRotvwAQ7rMTEp96"),
+(2, 2, "usuario1@smartcode.com", "Usuario 1", "$2a$10$pSGuoDMBhc68jz2MXH95M.AiVXHndndbAfgz7jEp.sypMT7iX.JfO"),
+(3, 2, "usuario2@smartcode.com", "Usuario 2", "$2a$10$Pey2MRIpzcl3B3ppztlWnO52KEWcpNSKt6Vx2qt8NGtXqlhUIO4cq");
 INSERT INTO ticket (id_ticket, id_usuario, ticket_pedido) VALUES 
 (1, 2, ""), 
 (2, 2, ""),
